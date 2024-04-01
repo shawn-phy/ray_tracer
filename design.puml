@@ -1,0 +1,57 @@
+@startuml
+class RayTracer {
+    + renderScene(scene: Scene)
+}
+
+class Scene {
+    - objects: List<Object>
+    - lights: List<Light>
+    + addObject(object: Object)
+    + addLight(light: Light)
+}
+
+class Object {
+    - material: Material
+    + intersect(ray: Ray): HitRecord?
+}
+
+class Light {
+    - position: Vec3
+    - intensity: Color
+    + getPosition(): Vec3
+    + getIntensity(): Color
+}
+
+class Material {
+    - color: Color
+    - reflectance: float
+    + getColor(): Color
+    + getReflectance(): float
+}
+
+class HitRecord {
+    - point: Vec3
+    - normal: Vec3
+    - material: Material
+}
+
+class Vec3 {
+    - x: float
+    - y: float
+    - z: float
+    + static dot(a: Vec3, b: Vec3): float
+    + static cross(a: Vec3, b: Vec3): Vec3
+}
+
+class Color {
+    - r: float
+    - g: float
+    - b: float
+}
+RayTracer --> Scene
+Scene "1" *-- "*" Object
+Scene "1" *-- "*" Light
+Object "1" *-- "1" Material
+Object "1" *-- "0..1" HitRecord
+HitRecord "1" o-- "1" Material
+@enduml

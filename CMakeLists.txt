@@ -19,6 +19,8 @@ set ( EXTERNAL
 set ( SOURCE_ONE_WEEKEND
   src/external/vec3.h
   src/external/stb_image.h
+  src/external/color.h
+  src/external/ray.h
   
   src/main.cpp
 )
