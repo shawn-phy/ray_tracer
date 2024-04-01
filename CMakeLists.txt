@@ -17,10 +17,10 @@ set ( EXTERNAL
 )
 
 set ( SOURCE_ONE_WEEKEND
-  src/external/vec3.h
+  src/vec3.h
   src/external/stb_image.h
-  src/external/color.h
-  src/external/ray.h
+  src/color.h
+  src/ray.h
   
   src/main.cpp
 )
@@ -49,5 +49,5 @@ elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 # Executables
-add_executable(vec3_class      ${EXTERNAL} ${SOURCE_ONE_WEEKEND})
+add_executable(ray_sphere      ${EXTERNAL} ${SOURCE_ONE_WEEKEND})
 
