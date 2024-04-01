@@ -17,6 +17,7 @@ set ( EXTERNAL
 )
 
 set ( SOURCE_ONE_WEEKEND
+  src/external/vec3.h
   src/external/stb_image.h
   
   src/main.cpp
@@ -24,9 +25,6 @@ set ( SOURCE_ONE_WEEKEND
 
 include_directories(src)
 
-# Specific compiler flags below. We're not going to add options for all possible compilers, but if
-# you're new to CMake (like we are), the following may be a helpful example if you're using a
-# different compiler or want to set different compiler options.
 
 message (STATUS "Compiler ID: " ${CMAKE_CXX_COMPILER_ID})
 message (STATUS "Release flags: " ${CMAKE_CXX_FLAGS_RELEASE})
@@ -49,5 +47,5 @@ elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 # Executables
-add_executable(first_trial      ${EXTERNAL} ${SOURCE_ONE_WEEKEND})
+add_executable(vec3_class      ${EXTERNAL} ${SOURCE_ONE_WEEKEND})
 

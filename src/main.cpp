@@ -1,4 +1,5 @@
 #include <iostream>
+#include "external/vec3.h"
 
 int main() {
 
