@@ -1,9 +1,10 @@
 # ray_tracer
 ## introduction 
-this repo implements a very primitive ray tracer for a specific scene and is based on the book by peter shirley **ray tracing in one weekend**
+this personal project implements a very primitive ray tracer for a specific scene and is based on the book by peter shirley. 
 
 ## the problem
 It allows users to create images using ray tracing techniques, particularly path tracing. Path tracing simulates the behavior of light in a scene, resulting in realistic lighting effects, such as shadows, reflections, and refractions. This tool provides a simple yet effective way for users to generate images with high-quality lighting effects, suitable for various applications like computer graphics, animation, and visual effects in movies and video games.
+![](.vscode\ray-tracing-image-1.jpg)
 
 ### the vec3 class
 Almost all graphics programs have some class(es) for storing geometric vectors and colors. In many systems these vectors are 4D (3D position plus a homogeneous coordinate for geometry, or RGB plus an alpha transparency component for colors). For our purposes, three coordinates suffice.
@@ -15,5 +16,10 @@ implements the vector class to enable writing to a single a pixel a color value.
 ### the ray class 
 in physics a ray of light can be defenied as a an imaginary line from a light source or reflected that travels in straight line(at least in classical physics), in our cleass we implement members such as the rays origin and direction and associate methods to get the coroordinates of a ray at a point ray::at(t). this method returns a point on the ray at a distance t from the origin 
 
+### the camera class 
+This class implements a viewport, focal length, and the dimensions of the scene it is rendering. 
 
+### The create sphere class
+this class is a factory instance that creates spheres at certain points. It uses cartesian coordinate system. 
 
+**Note**: the camera class has to use rightup coordinate system 
